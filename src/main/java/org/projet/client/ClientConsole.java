@@ -7,15 +7,13 @@ import java.rmi.registry.LocateRegistry;
 import java.rmi.registry.Registry;
 import java.util.List;
 import java.util.Scanner;
-
 public class ClientConsole {
 
     public static void main(String[] args) {
         try {
             // Connexion au serveur RMI
-            Registry registry = LocateRegistry.getRegistry("localhost", 1099);
+            Registry registry = LocateRegistry.getRegistry("192.168.11.103", 1099);
             InventaireInterface inventaire = (InventaireInterface) registry.lookup("InventaireService");
-
             // Menu interactif
             Scanner scanner = new Scanner(System.in);
             int choix;
